@@ -31,7 +31,7 @@ export default function TodoForm() {
           headers: {'Content-type': 'application/json; charset=UTF-8'},
         })
       ).json()
-
+      console.log('data: ', data)
       dispatch({
         todos: data,
         type: 'ADD_TODO',

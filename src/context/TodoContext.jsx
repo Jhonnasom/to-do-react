@@ -1,5 +1,5 @@
 import {createContext, useContext, useEffect, useReducer} from 'react'
-import ky from 'ky'
+// import ky from 'ky'
 
 const TodoDispatchContext = createContext(undefined)
 const TodoStateContext = createContext(undefined)
@@ -14,15 +14,16 @@ const url_api = 'http://127.0.0.1:8000/api'
 function reducer(state, payload) {
   switch (payload.type) {
     case 'ADD_TODO': {
+      console.log(payload.todos)
       return {
         ...state,
         todos: [
           {
-            id: payload.id,
-            title: payload.title,
-            updated_at: payload.updated_at,
-            created_at: payload.created_at,
-            completed: payload.completed ?? false,
+            id: payload.todos.id,
+            title: payload.todos.title,
+            updated_at: payload.todos.updated_at,
+            created_at: payload.todos.created_at,
+            completed: payload.todos.completed ?? false,
           },
           ...state.todos,
         ],
