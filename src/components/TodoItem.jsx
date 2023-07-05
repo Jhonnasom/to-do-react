@@ -47,7 +47,7 @@ export default memo(function TodoItem({todo}) {
       <input checked={todo.completed} onChange={handleChange} type="checkbox" />
       <h1 className="flex-1">{todo.title}</h1>
       <Button
-        className="bg-red-600 h-6 hover:bg-red-500 text-sm text-white"
+        className="bg-gray-600 h-6 hover:bg-gray-500 text-sm text-white "
         onClick={handleDelete}
         type="button"
       >
