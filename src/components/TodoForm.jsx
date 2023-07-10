@@ -44,9 +44,12 @@ export default function TodoForm() {
   }
 
   return (
-    <form className="flex gap-x-2 items-center" onSubmit={handleSubmit}>
+    <form
+      className="flex flex-col gap-x-2 items-center"
+      onSubmit={handleSubmit}
+    >
       <TextField name="title" ref={inputRef} />
-      <Button className="shrink-0">Save Todo</Button>
+      <Button className="w-full justify-center">Save Todo</Button>
     </form>
   )
 }
